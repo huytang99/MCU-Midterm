@@ -1,11 +1,10 @@
 /*
  * fsm_automatic.c
  *
- *  Created on: Oct 5, 2022
- *      Author: HuyKiet
+ *
  */
 #include "fsm_automatic.h"
-#include "main.h"
+
 
 void fsm_automatic_run() {
 	switch(status) {

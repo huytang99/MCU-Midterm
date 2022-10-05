@@ -97,123 +97,123 @@ void fsm_automatic_run() {
  8000164:	0800019f 	.word	0x0800019f
  8000168:	080001cb 	.word	0x080001cb
  800016c:	080001f7 	.word	0x080001f7
-	case INIT:
-		HAL_GPIO_WritePin ( LED_RED_GPIO_Port , LED_RED_Pin , GPIO_PIN_SET );
+		case INIT:
+			HAL_GPIO_WritePin ( LED_RED_GPIO_Port , LED_RED_Pin , GPIO_PIN_SET );
  8000170:	2201      	movs	r2, #1
  8000172:	2120      	movs	r1, #32
  8000174:	4830      	ldr	r0, [pc, #192]	; (8000238 <fsm_automatic_run+0xec>)
  8000176:	f000 fd2d 	bl	8000bd4 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin ( LED_YELLOW_GPIO_Port , LED_YELLOW_Pin , GPIO_PIN_SET );
+			HAL_GPIO_WritePin ( LED_YELLOW_GPIO_Port , LED_YELLOW_Pin , GPIO_PIN_SET );
  800017a:	2201      	movs	r2, #1
  800017c:	2140      	movs	r1, #64	; 0x40
  800017e:	482e      	ldr	r0, [pc, #184]	; (8000238 <fsm_automatic_run+0xec>)
  8000180:	f000 fd28 	bl	8000bd4 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin ( LED_GREEN_GPIO_Port , LED_GREEN_Pin , GPIO_PIN_SET );
+			HAL_GPIO_WritePin ( LED_GREEN_GPIO_Port , LED_GREEN_Pin , GPIO_PIN_SET );
  8000184:	2201      	movs	r2, #1
  8000186:	2180      	movs	r1, #128	; 0x80
  8000188:	482b      	ldr	r0, [pc, #172]	; (8000238 <fsm_automatic_run+0xec>)
  800018a:	f000 fd23 	bl	8000bd4 <HAL_GPIO_WritePin>
-		status = AUTO_RED;
+			status = AUTO_RED;
  800018e:	4b29      	ldr	r3, [pc, #164]	; (8000234 <fsm_automatic_run+0xe8>)
  8000190:	2202      	movs	r2, #2
  8000192:	601a      	str	r2, [r3, #0]
-		setTimer1(5000);
+			setTimer1(5000);
  8000194:	f241 3088 	movw	r0, #5000	; 0x1388
  8000198:	f000 f934 	bl	8000404 <setTimer1>
-		break;
+			break;
  800019c:	e048      	b.n	8000230 <fsm_automatic_run+0xe4>
-	case AUTO_RED:
-		//TODO
-		HAL_GPIO_WritePin ( LED_RED_GPIO_Port , LED_RED_Pin , GPIO_PIN_RESET );
+		case AUTO_RED:
+			//TODO
+			HAL_GPIO_WritePin ( LED_RED_GPIO_Port , LED_RED_Pin , GPIO_PIN_RESET );
  800019e:	2200      	movs	r2, #0
  80001a0:	2120      	movs	r1, #32
  80001a2:	4825      	ldr	r0, [pc, #148]	; (8000238 <fsm_automatic_run+0xec>)
  80001a4:	f000 fd16 	bl	8000bd4 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
  80001a8:	2201      	movs	r2, #1
  80001aa:	2140      	movs	r1, #64	; 0x40
  80001ac:	4822      	ldr	r0, [pc, #136]	; (8000238 <fsm_automatic_run+0xec>)
  80001ae:	f000 fd11 	bl	8000bd4 <HAL_GPIO_WritePin>
-		if(timer1_flag == 1) {
+			if(timer1_flag == 1) {
  80001b2:	4b22      	ldr	r3, [pc, #136]	; (800023c <fsm_automatic_run+0xf0>)
  80001b4:	681b      	ldr	r3, [r3, #0]
  80001b6:	2b01      	cmp	r3, #1
  80001b8:	d135      	bne.n	8000226 <fsm_automatic_run+0xda>
-			status = AUTO_GREEN;
+				status = AUTO_GREEN;
  80001ba:	4b1e      	ldr	r3, [pc, #120]	; (8000234 <fsm_automatic_run+0xe8>)
  80001bc:	2203      	movs	r2, #3
  80001be:	601a      	str	r2, [r3, #0]
-			setTimer1(3000);
+				setTimer1(3000);
  80001c0:	f640 30b8 	movw	r0, #3000	; 0xbb8
  80001c4:	f000 f91e 	bl	8000404 <setTimer1>
-		}
-		break;
+			}
+			break;
  80001c8:	e02d      	b.n	8000226 <fsm_automatic_run+0xda>
-	case AUTO_GREEN:
-		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
+		case AUTO_GREEN:
+			HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
  80001ca:	2200      	movs	r2, #0
  80001cc:	2180      	movs	r1, #128	; 0x80
  80001ce:	481a      	ldr	r0, [pc, #104]	; (8000238 <fsm_automatic_run+0xec>)
  80001d0:	f000 fd00 	bl	8000bd4 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
  80001d4:	2201      	movs	r2, #1
  80001d6:	2120      	movs	r1, #32
  80001d8:	4817      	ldr	r0, [pc, #92]	; (8000238 <fsm_automatic_run+0xec>)
  80001da:	f000 fcfb 	bl	8000bd4 <HAL_GPIO_WritePin>
-		//TODO
-		if(timer1_flag == 1) {
+			//TODO
+			if(timer1_flag == 1) {
  80001de:	4b17      	ldr	r3, [pc, #92]	; (800023c <fsm_automatic_run+0xf0>)
  80001e0:	681b      	ldr	r3, [r3, #0]
  80001e2:	2b01      	cmp	r3, #1
  80001e4:	d121      	bne.n	800022a <fsm_automatic_run+0xde>
-			status = AUTO_YELLOW;
+				status = AUTO_YELLOW;
  80001e6:	4b13      	ldr	r3, [pc, #76]	; (8000234 <fsm_automatic_run+0xe8>)
  80001e8:	2204      	movs	r2, #4
  80001ea:	601a      	str	r2, [r3, #0]
-			setTimer1(2000);
+				setTimer1(2000);
  80001ec:	f44f 60fa 	mov.w	r0, #2000	; 0x7d0
  80001f0:	f000 f908 	bl	8000404 <setTimer1>
-		}
-		break;
+			}
+			break;
  80001f4:	e019      	b.n	800022a <fsm_automatic_run+0xde>
-	case AUTO_YELLOW:
-		//TODO
-		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
+		case AUTO_YELLOW:
+			//TODO
+			HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
  80001f6:	2200      	movs	r2, #0
  80001f8:	2140      	movs	r1, #64	; 0x40
  80001fa:	480f      	ldr	r0, [pc, #60]	; (8000238 <fsm_automatic_run+0xec>)
  80001fc:	f000 fcea 	bl	8000bd4 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
  8000200:	2201      	movs	r2, #1
  8000202:	2180      	movs	r1, #128	; 0x80
  8000204:	480c      	ldr	r0, [pc, #48]	; (8000238 <fsm_automatic_run+0xec>)
  8000206:	f000 fce5 	bl	8000bd4 <HAL_GPIO_WritePin>
-		if(timer1_flag == 1) {
+			if(timer1_flag == 1) {
  800020a:	4b0c      	ldr	r3, [pc, #48]	; (800023c <fsm_automatic_run+0xf0>)
  800020c:	681b      	ldr	r3, [r3, #0]
  800020e:	2b01      	cmp	r3, #1
  8000210:	d10d      	bne.n	800022e <fsm_automatic_run+0xe2>
-			status = AUTO_RED;
+				status = AUTO_RED;
  8000212:	4b08      	ldr	r3, [pc, #32]	; (8000234 <fsm_automatic_run+0xe8>)
  8000214:	2202      	movs	r2, #2
  8000216:	601a      	str	r2, [r3, #0]
-			setTimer1(5000);
+				setTimer1(5000);
  8000218:	f241 3088 	movw	r0, #5000	; 0x1388
  800021c:	f000 f8f2 	bl	8000404 <setTimer1>
-		}
-		break;
+			}
+			break;
  8000220:	e005      	b.n	800022e <fsm_automatic_run+0xe2>
-	default:
-		break;
+		default:
+			break;
  8000222:	bf00      	nop
  8000224:	e004      	b.n	8000230 <fsm_automatic_run+0xe4>
-		break;
+			break;
  8000226:	bf00      	nop
  8000228:	e002      	b.n	8000230 <fsm_automatic_run+0xe4>
-		break;
+			break;
  800022a:	bf00      	nop
  800022c:	e000      	b.n	8000230 <fsm_automatic_run+0xe4>
-		break;
+			break;
  800022e:	bf00      	nop
 	}
 }

@@ -1,8 +1,7 @@
 /*
  * fsm_manual.c
  *
- *  Created on: Oct 12, 2022
- *      Author: HuyKiet
+ *
  */
 
 #include "fsm_manual.h"

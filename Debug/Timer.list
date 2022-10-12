@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  000169cc  00000000  00000000  0002b7b8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000ae09  00000000  00000000  00042184  2**0
+ 17 .debug_line   0000ae07  00000000  00000000  00042184  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00081db2  00000000  00000000  0004cf8d  2**0
+ 18 .debug_str    00081db2  00000000  00000000  0004cf8b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000ced3f  2**0
+ 19 .comment      00000053  00000000  00000000  000ced3d  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002710  00000000  00000000  000ced94  2**2
+ 20 .debug_frame  00002710  00000000  00000000  000ced90  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -380,7 +380,7 @@ void fsm_automatic_run() {
  800032c:	20000048 	.word	0x20000048
 
 08000330 <fsm_manual_run>:
- *      Author: HuyKiet
+ *
  */
 
 #include "fsm_manual.h"

@@ -1,8 +1,7 @@
 /*
  * fsm_automatic.h
  *
- *  Created on: Oct 5, 2022
- *      Author: HuyKiet
+
  */
 
 #ifndef INC_FSM_AUTOMATIC_H_

@@ -63,8 +63,8 @@ all: main-build
 main-build: Timer.elf secondary-outputs
 
 # Tool invocations
-Timer.elf Timer.map: $(OBJS) $(USER_OBJS) C:\Users\HuyKiet\STM32CubeIDE\workspace_1.7.0\Timer\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Timer.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\HuyKiet\STM32CubeIDE\workspace_1.7.0\Timer\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Timer.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Timer.elf Timer.map: $(OBJS) $(USER_OBJS) C:\Users\HuyKiet\STM32CubeIDE\workspace_1.7.0\Midterm\STM32\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Timer.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\HuyKiet\STM32CubeIDE\workspace_1.7.0\Midterm\STM32\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Timer.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

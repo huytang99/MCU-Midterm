@@ -14,8 +14,20 @@
 
 //extern int button1_flag;
 
-int isButton1Pressed();
+int isRESBtnPressed();
+int isRESBtnLongPressed();
+int isRESBtnDoublePressed();
 
-void getKeyInput();
+int isINCBtnPressed();
+int isINCBtnLongPressed();
+int isINCBtnDoublePressed();
+
+int isDECBtnPressed();
+int isDECBtnLongPressed();
+int isDECBtnDoublePressed();
+
+void getKeyInput_RESBtn();
+void getKeyInput_INCBtn();
+void getKeyInput_DECBtn();
 
 #endif /* INC_BUTTON_H_ */

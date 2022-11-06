@@ -10,16 +10,15 @@
 #include "software_timer.h"
 #include "button.h"
 
-#define INIT 1
-#define AUTO_RED 2
-#define AUTO_GREEN 3
-#define AUTO_YELLOW 4
+#define INIT 14
+#define SIM_RES 15
+#define SIM_INC 16
+#define SIM_DEC 17
+#define NO_EVENT 18
 
-#define MAN_RED 12
-#define MAN_GREEN 13
-#define MAN_YELLOW 14
 
 extern int status;//biến toàn cục cho tất cả module
+extern int counter7SEG;
 
 
 

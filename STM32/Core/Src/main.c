@@ -28,6 +28,7 @@
 #include "fsm_automatic.h"
 #include "fsm_manual.h"
 #include "display7SEG.h"
+#include "fsm_simple_buttons_run.h"
 #include "LedBlinky.h"
 /* USER CODE END Includes */
 
@@ -136,7 +137,7 @@ int main(void)
 //	  		  fsm_manual_run();
 //	  }
 
-
+	  fsm_simple_buttons_run();
 	  LedBlinky();
 
 
@@ -277,7 +278,9 @@ static void MX_GPIO_Init(void)
 //	int counter = 500;
 	void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		timerRun();
-		getKeyInput();
+		getKeyInput_INCBtn();
+		getKeyInput_RESBtn();
+		getKeyInput_DECBtn();
 	}
 /* USER CODE END 4 */
 

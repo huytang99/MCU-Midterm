@@ -1,8 +1,8 @@
 ../Core/Inc/display7SEG.h:13:6:LEDPinAssign	16	static
 ../Core/Inc/display7SEG.h:23:6:display7SEG	336	static
-../Core/Src/main.c:73:5:main	8	static
-../Core/Src/main.c:156:6:SystemClock_Config	72	static
-../Core/Src/main.c:192:13:MX_TIM2_Init	32	static
-../Core/Src/main.c:237:13:MX_GPIO_Init	40	static
-../Core/Src/main.c:279:7:HAL_TIM_PeriodElapsedCallback	16	static
-../Core/Src/main.c:291:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/main.c:72:5:main	8	static
+../Core/Src/main.c:155:6:SystemClock_Config	72	static
+../Core/Src/main.c:191:13:MX_TIM2_Init	32	static
+../Core/Src/main.c:236:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:278:7:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/main.c:288:6:Error_Handler	4	static,ignoring_inline_asm
